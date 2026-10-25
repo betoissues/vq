@@ -10,8 +10,11 @@ on:
 
 jobs:
   test:
-    # Adjust to a label your Forgejo runner provides.
-    runs-on: docker
+    runs-on: nebula-01
+    # The runner's default image (alpine) has no Node, which checkout and
+    # setup-go need; setup-go then installs the Go version from go.mod.
+    container:
+      image: node:22-bookworm
     steps:
       - uses: https://code.forgejo.org/actions/checkout@v4
 
