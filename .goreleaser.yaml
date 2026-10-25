@@ -1,0 +1,40 @@
+# GoReleaser configuration: https://goreleaser.com/customization/
+version: 2
+
+project_name: vq
+
+builds:
+  - id: vq
+    main: .
+    binary: vq
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w
+
+archives:
+  - id: vq
+    ids:
+      - vq
+    formats:
+      - tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - README.md
+      - LICENSE
+      - SPEC.md
+
+checksum:
+  name_template: checksums.txt
+
+changelog:
+  use: git
+  sort: asc

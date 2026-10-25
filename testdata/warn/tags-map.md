@@ -1,0 +1,5 @@
+---
+tags:
+  k: v
+---
+#inlinekept
