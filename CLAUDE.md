@@ -8,7 +8,10 @@ without Obsidian. Single Go binary. Used from the terminal and by Claude agents 
 - `SPEC.md` is the specification for v1. Code and tests follow it.
 - v1 replaced an earlier Python prototype, which has been removed. Behavior is defined only by `SPEC.md`.
 - Pending work in `todo.md`.
-- Two remotes: Forgejo (`aurora-01`) and GitHub. Module path `github.com/betoissues/vq` (for `go install`).
+- Forgejo (`aurora-01`) is the primary repository (`origin`). GitHub is a push mirror of it, used for releases:
+  pushing a `v*` tag to Forgejo reaches GitHub through the mirror and runs goreleaser there. Never push to GitHub
+  directly; the mirror overwrites it. Module path `github.com/betoissues/vq` (for `go install`).
+- CI: `.forgejo/workflows/test.yml` on Forgejo; `.github/workflows/release.yml` on GitHub (tags only).
 
 ## Layout
 
