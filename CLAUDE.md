@@ -16,6 +16,7 @@ without Obsidian. Single Go binary. Used from the terminal and by Claude agents 
 - `internal/vault/`: walking, frontmatter (`go.yaml.in/yaml/v3` via `yaml.Node`), tags.
 - `internal/query/`: `--tag`, `--where`, `--path`.
 - `testdata/vault/`: fixture vault with invented notes, one per case.
+- `skills/vq/SKILL.md`: agent skill for using vq; keep it in sync with `SPEC.md` and `--help`.
 - Dependencies: standard library plus `go.yaml.in/yaml/v3` and `golang.org/x/text` (NFC normalization only). Flags use the standard `flag` package.
 
 ## Rules

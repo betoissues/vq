@@ -99,6 +99,17 @@ search.
 | 1 | No note matched. |
 | 2 | Usage error, no usable vault, or an error writing the output. |
 
+## Agent skill
+
+[`skills/vq/SKILL.md`](skills/vq/SKILL.md) teaches coding agents such as Claude Code when and how to use vq. To
+install it for Claude Code, link it into your skills directory from a clone of this repo:
+
+```
+ln -s "$PWD/skills/vq" ~/.claude/skills/vq
+```
+
+If you set `CLAUDE_CONFIG_DIR`, use `$CLAUDE_CONFIG_DIR/skills` instead of `~/.claude/skills`.
+
 ## Specification
 
 [`SPEC.md`](SPEC.md) describes the behavior in full.
